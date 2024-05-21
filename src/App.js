@@ -1,21 +1,17 @@
-import { User } from "./User";
+// import { User } from "./User";
+import { useState } from "react";
 
-// list or working with array in react
+// working with State in react
 function App() {
-  const planet = [
-    { name: "Mars", isGasPlanet: false },
-    { name: "Earth", isGasPlanet: false },
-    { name: "Jupiter", isGasPlanet: true },
-    { name: "Venus", isGasPlanet: false },
-    { name: "Neptune", isGasPlanet: true },
-    { name: "Uranus", isGasPlanet: true },
-  ];
+  const [age, setAge] = useState(0);
+
+ const increaseAge = () => {
+   setAge(age + 1)
+  };
 
   return (
     <div className="App">
-      {planet.map((planet, key) => 
-        planet.isGasPlanet && <h1>{ planet.name}</h1> 
-      )}
+      { age} <button onClick={increaseAge}>Increase age</button>
     </div>
   );
 }
